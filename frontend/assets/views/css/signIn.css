@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat%3Awght%40400%3B500&display=swap%27%29%3B");
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffff;
+}
+
+
+a:hover {
+    text-decoration: underline;
+}
+
+.bg-holder{
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas y Alquileres - Alquiler Express</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Alquiler Express</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">Sobre nosotros</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Servicios</a></li>
+                    <li class="nav-item" id="mensajeIngreso"></li>
+                    <li class="nav-item dropdown" id="userDropdown" style="display:none;">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdownMenu" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdownMenu">
+                            <li><a class="dropdown-item" href="#" id="goToDashboard">Ir al Dashboard</a></li>
+                            <li><a class="dropdown-item" href="#" id="goToRentals">Propiedades y Reservas</a></li>
+                            <li><a class="dropdown-item" href="#" id="editProperty">Editar Propiedades</a></li>
+                            <li><a class="dropdown-item" href="#" id="logoutBtn">Cerrar Sesión</a></li>
+                        </ul>
+                    </li>
+                    <li id="logInButton" class="nav-item" style="display:block;"><a href="logIn.html"
+                            class="nav-link">Iniciar sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="ftco-section" style="margin-top: 40px;">
+        <div class="container">
+            <div class="row justify-content-center mb-3">
+                <div class="col-md-8 heading-section text-center ftco-animate" style="margin-bottom: 30px;">
+                    <span class="subheading">Nuestras Propiedades</span>
+                    <h2 class="mb-3">Propiedades Disponibles</h2>
+                </div>
+            </div>
+            <div class="container mt-1">
+                <form id="search-form" class="card card-body">
+                    <div class="row g-3 align-items-end">
+                        <div class="col-md-2">
+                            <label for="province" class="form-label">Provincia</label>
+                            <select id="province" class="form-control">
+                                <option value="" disabled selected>Seleccione una provincia</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="city" class="form-label">Ciudad</label>
+                            <select id="city" class="form-control">
+                                <option value="" disabled selected>Seleccione una ciudad</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="search-date-in" class="form-label">Fecha ingreso</label>
+                            <input type="text" id="search-date-in" class="form-control" autocomplete="off"
+                                placeholder="YYYY-MM-DD" readonly>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="search-date-out" class="form-label">Fecha egreso</label>
+                            <input type="text" id="search-date-out" class="form-control" autocomplete="off"
+                                placeholder="YYYY-MM-DD" readonly>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-end">
+                            <button type="submit" class="btn btn-primary w-100"><i class="bi bi-search"></i>
+                                Buscar</button>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-end">
+                            <button type="button" id="btnLimpiarFiltrosPropiedades" class="btn btn-secondary mt-2">
+                                Limpiar filtros
+                            </button>
+                            <button class="btn btn-link w-100" type="button" data-toggle="collapse"
+                                data-target="#extraFilters" aria-expanded="false" aria-controls="extraFilters">
+                                Más filtros
+                            </button>
+                        </div>
+                    </div>
+                    <div class="collapse mt-3" id="extraFilters">
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label for="search-capacity" class="form-label">Capacidad mínima</label>
+                                <input type="number" id="search-capacity" class="form-control" placeholder="Ej: 2">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="search-price-min" class="form-label">Precio mínimo</label>
+                                <input type="number" id="search-price-min" class="form-control" placeholder="Ej: 1000">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="search-price-max" class="form-label">Precio máximo</label>
+                                <input type="number" id="search-price-max" class="form-control" placeholder="Ej: 5000">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="search-cancel-policy" class="form-label">Política de cancelación</label>
+                                <select id="search-cancel-policy" class="form-control">
+                                    <option value="">Cualquiera</option>
+                                    <option value="flexible">Flexible</option>
+                                    <option value="moderate">Moderada</option>
+                                    <option value="strict">Estricta</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="mensajeErrorSearch" class="mt-2"></div>
+                </form>
+            </div>
+            <div id="listaPropiedades" class="row"></div>
+            <div id="pagination"></div>
+        </div>
+    </section>
+
+    <section class="ftco-section" style="padding-top: 0;">
+        <div class="container">
+            <div class="row justify-content-center mb-3">
+                <div class="col-md-8 heading-section text-center ftco-animate">
+                    <span class="subheading">Reservas</span>
+                    <h2 class="mb-3">Alquileres</h2>
+                </div>
+            </div>
+            <div class="container mt-4 mb-3">
+                <form id="search-rentals-form" class="card card-body">
+                    <div class="row g-3 align-items-end">
+                        <div class="col-md-3">
+                            <label for="search-dni" class="form-label">DNI Inquilino</label>
+                            <input type="number" id="search-dni" class="form-control" placeholder="Ej: 12345678">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="search-province" class="form-label">Provincia</label>
+                            <select id="search-province" class="form-control">
+                                <option value="" selected>Cualquiera</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="search-city" class="form-label">Ciudad</label>
+                            <select id="search-city" class="form-control">
+                                <option value="" selected>Cualquiera</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Filtros adicionales</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="search-sin-entrega-llave">
+                                <label class="form-check-label" for="search-sin-entrega-llave">Sin entrega de
+                                    llave</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="search-sin-devolucion-llave">
+                                <label class="form-check-label" for="search-sin-devolucion-llave">Sin devolución de
+                                    llave
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3 justify-content-center">
+                        <div class="col-md-4 d-flex flex-column align-items-center">
+                            <button type="submit" class="btn btn-primary w-75 mb-2">
+                                <i class="bi bi-search"></i> Buscar alquileres
+                            </button>
+                            <button type="button" id="btnLimpiarFiltrosRentals" class="btn btn-secondary w-75">
+                                Limpiar filtros
+                            </button>
+                        </div>
+                    </div>
+                    <div id="mensajeErrorSearchRentals" class="mt-2"></div>
+                </form>
+                <div id="listaRentals" class="row mt-3"></div>
+                <div id="paginationRentals"></div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-12">
+                    <ul class="nav nav-tabs justify-content-center" id="alquilerTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="activos-tab" data-bs-toggle="tab"
+                                data-bs-target="#activos" type="button" role="tab">Activos</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="cancelados-tab" data-bs-toggle="tab"
+                                data-bs-target="#cancelados" type="button" role="tab">Cancelados</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="finalizados-tab" data-bs-toggle="tab"
+                                data-bs-target="#finalizados" type="button" role="tab">Finalizados</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-content" id="alquilerTabsContent">
+                <div class="tab-pane fade show active" id="activos" role="tabpanel">
+                    <div class="row" id="listaAlquileresActivos"></div>
+                </div>
+                <div class="tab-pane fade" id="cancelados" role="tabpanel">
+                    <div class="row" id="listaAlquileresCancelados"></div>
+                </div>
+                <div class="tab-pane fade" id="finalizados" role="tabpanel">
+                    <div class="row" id="listaAlquileresFinalizados"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer bg-dark text-light">
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <span class="sitename">Alquiler Express</span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p>Sucursal AMBA</p>
+                        <p>Buenos Aires, Argentina</p>
+                        <p class="mt-3"><strong>Teléfono:</strong> <span>+54 11 5555-5555</span></p>
+                        <p><strong>Email:</strong> <span>info@alquilerexpress.com</span></p>
+                    </div>
+                    <div class="social-links d-flex mt-4">
+                        <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="https://whatsapp.com" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Enlaces Útiles</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="about.html">Sobre nosotros</a></li>
+                        <li><a href="services.html">Servicios</a></li>
+                        <li><a href="#">Términos de servicio</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Nuestros Servicios</h4>
+                    <ul>
+                        <li><a href="#">Alquiler de Viviendas</a></li>
+                        <li><a href="#">Alquiler de Locales</a></li>
+                        <li><a href="#">Gestión de Propiedades</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../scripts/navbarSignIn.js"></script>
+    <script src="../scripts/dashboardTenantRentals.js"></script>
+    <script src="../scripts/rentals.js"></script>
+    <script src="js/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

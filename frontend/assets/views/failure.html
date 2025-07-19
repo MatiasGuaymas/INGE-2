@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Fallo en la compra</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/views/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/views/css/style.css">
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    Swal.fire({
+      title: '¡Opps!',
+      text: 'La operación no se pudo realizar correctamente.',
+      icon: 'error',
+      confirmButtonText: 'Aceptar',
+      customClass: {
+        confirmButton: 'btn btn-primary'
+      },
+      buttonsStyling: false
+    }).then(() => {
+      window.location.href = '/views/searchProperties.html';
+    });
+  </script>
+</body>
+
+</html>

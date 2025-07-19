@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Reserva - Alquiler Express</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .fecha-ocupada {
+            background-color: #ffdddd !important;
+            color: #999 !important;
+        }
+
+        .property-info {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .property-info h5 {
+            color: #1089ff;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Alquiler Express</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">Sobre nosotros</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Servicios</a></li>
+                    <li class="nav-item" id="mensajeIngreso"></li>
+                    <li class="nav-item dropdown" id="userDropdown" style="display:none;">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdownMenu" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdownMenu">
+                            <li><a class="dropdown-item" href="#" id="goToDashboard">Ir al Dashboard</a></li>
+                            <li><a class="dropdown-item" href="#" id="goToRentals">Propiedades y Reservas</a></li>
+                            <li><a class="dropdown-item" href="#" id="editProperty">Editar Propiedades</a></li>
+                            <li><a class="dropdown-item" href="#" id="logoutBtn">Cerrar Sesión</a></li>
+                        </ul>
+                    </li>
+                    <li id="logInButton" class="nav-item" style="display:block;"><a href="logIn.html"
+                            class="nav-link">Iniciar sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="ftco-section" style="margin-top: 80px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="mb-4 text-center">Reservar Propiedad</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Información de la propiedad -->
+                    <div class="property-info">
+                        <h5 id="propiedad-titulo">Cargando información...</h5>
+                        <p><strong>Dirección:</strong> <span id="propiedad-direccion"></span></p>
+                        <p><strong>Ciudad:</strong> <span id="propiedad-ciudad"></span></p>
+                        <p><strong>Provincia:</strong> <span id="propiedad-provincia"></span></p>
+                        <p><strong>Precio por noche:</strong> $<span id="propiedad-precio"></span></p>
+                        <p><strong>Capacidad máxima:</strong> <span id="propiedad-capacidad"></span> personas</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <!-- Formulario de reserva -->
+                    <div class="card">
+                        <div class="card-body">
+                            <form id="formReserva">
+                                <div class="mb-3" style="position:relative;">
+                                    <label for="tenant_username" class="form-label">Usuario cliente</label>
+                                    <input type="text" class="form-control" id="tenant_username" autocomplete="off">
+                                    <div id="listaCoincidenciasTenant" class="list-group position-absolute w-100"
+                                        style="z-index:1000;"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="fecha_ingreso" class="form-label">Fecha de ingreso</label>
+                                    <input type="text" class="form-control" id="fecha_ingreso" autocomplete="off"
+                                        readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="fecha_egreso" class="form-label">Fecha de egreso</label>
+                                    <input type="text" class="form-control" id="fecha_egreso" autocomplete="off"
+                                        readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="cantidad_personas" class="form-label">Cantidad de personas</label>
+                                    <select class="form-control" id="cantidad_personas">
+                                        <option value="">Seleccione...</option>
+                                    </select>
+                                </div>
+                                <div id="mensaje-reserva" class="alert alert-danger" style="display: none;"></div>
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-primary" id="btn-reservar">Reservar</button>
+                                    <a href="/views/rentals.html" class="btn btn-secondary">Cancelar</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer bg-dark text-light">
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <span class="sitename">Alquiler Express</span>
+                    </a>
+                    <p class="my-3">
+                        Simplifica el proceso de alquilar propiedades para tus viajes y necesidades temporales.
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Enlaces útiles</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="about.html">Sobre nosotros</a></li>
+                        <li><a href="services.html">Servicios</a></li>
+                        <li><a href="#">Términos de servicio</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Nuestros Servicios</h4>
+                    <ul>
+                        <li><a href="#">Alquiler de Viviendas</a></li>
+                        <li><a href="#">Alquiler de Locales</a></li>
+                        <li><a href="#">Gestión de Propiedades</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="../scripts/navbarSignIn.js"></script>
+    <script src="../scripts/crear-reserva.js"></script>
+</body>
+
+</html>

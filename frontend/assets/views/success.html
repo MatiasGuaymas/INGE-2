@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Éxito en la compra</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/views/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/views/css/style.css">
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    Swal.fire({
+      title: '¡Éxito!',
+      text: 'La operación se realizó correctamente.',
+      icon: 'success',
+      confirmButtonText: 'Aceptar',
+      customClass: {
+        confirmButton: 'btn btn-primary'
+      },
+      buttonsStyling: false
+    }).then(() => {
+      window.location.href = '/views/dashboardTenant.html';
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../scripts/success.js"></script>
+</body>
+
+</html>

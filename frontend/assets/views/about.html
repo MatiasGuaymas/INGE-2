@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Sobre Nosotros - Alquiler Express</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/ionicons.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/jquery.timepicker.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/icomoon.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Alquiler Express</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+          <li class="nav-item active"><a href="about.html" class="nav-link">Sobre Nosotros</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Servicios</a></li>
+          <li class="nav-item" id="mensajeIngreso"></li>
+          <li class="nav-item dropdown" id="userDropdown" style="display:none;">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdownMenu" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="bi bi-person-circle"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdownMenu">
+              <li><a class="dropdown-item" href="#" id="goToDashboard">Ir al Dashboard</a></li>
+              <li><a class="dropdown-item" href="#" id="goToRentals">Propiedades y Reservas</a></li>
+              <li><a class="dropdown-item" href="#" id="editProperty">Editar Propiedades</a></li>
+              <li><a class="dropdown-item" href="#" id="logoutBtn">Cerrar Sesión</a></li>
+            </ul>
+          </li>
+          <li id="logInButton" class="nav-item" style="display:block;"><a href="logIn.html" class="nav-link">Iniciar
+              sesión</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('images/bg_1.jpg');"
+    data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+        <div class="col-md-9 ftco-animate pb-5 text-center">
+          <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Inicio <i
+                  class="ion-ios-arrow-forward"></i></a></span> <span>Sobre nosotros <i
+                class="ion-ios-arrow-forward"></i></span></p>
+          <h1 class="mb-3 bread">Sobre nosotros</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section ftco-no-pb bg-gray">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center"
+          style="background-image: url(images/about.jpg);">
+        </div>
+        <div class="col-md-6 wrap-about py-md-5 ftco-animate">
+          <div class="heading-section p-md-5">
+            <h2 class="mb-4">Nuestra Historia</h2>
+            <p>Hace 20 años, Alquiler Express nació de una necesidad compartida entre un grupo de conocidos que poseían
+              propiedades y buscaban alquilarlas por períodos cortos sin la carga de gestionarlo directamente. María
+              Torres, nuestra fundadora, asumió el rol de intermediaria, facilitando el proceso y publicando las
+              propiedades en redes sociales como Facebook e Instagram. Con el tiempo, hemos crecido desde el AMBA con la
+              visión de expandirnos a nivel provincial y nacional, siempre poniendo a las personas en el centro.</p>
+            <p>Nuestra misión es simplificar el alquiler de propiedades, ofreciendo una experiencia intuitiva y
+              confiable tanto para propietarios como para clientes. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 
+  <section class="ftco-counter img" id="section-counter">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+          <div class="block-18 py-4 mb-4">
+            <div class="text text-border d-flex align-items-center">
+              <strong class="number" data-number="305">0</strong>
+              <span>Clientes<br>Registrados</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+          <div class="block-18 py-4 mb-4">
+            <div class="text text-border d-flex align-items-center">
+              <strong class="number" data-number="1090">0</strong>
+              <span>Propiedades<br>Totales</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+          <div class="block-18 py-4 mb-4">
+            <div class="text text-border d-flex align-items-center">
+              <strong class="number" data-number="67">0</strong>
+              <span>Sucursales<br>Activas</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+          <div class="block-18 py-4 mb-4">
+            <div class="text d-flex align-items-center">
+              <strong class="number" data-number="20">0</strong>
+              <span>Años<br>de Experiencia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <section class="ftco-section testimony-section bg-gray">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-7 text-center heading-section ftco-animate">
+          <span class="subheading">Testimonios</span>
+          <h2 class="mb-3">Clientes Felices</h2>
+        </div>
+      </div>
+      <div class="row ftco-animate">
+        <div class="col-md-12">
+          <div class="carousel-testimony owl-carousel ftco-owl">
+            <div class="item">
+              <div class="testimony-wrap py-4">
+                <div class="text">
+                  <p class="mb-4">“Alquiler Express me facilitó encontrar una propiedad perfecta para mi familia en poco
+                    tiempo. ¡Muy recomendable!”</p>
+                  <div class="d-flex align-items-center">
+                    <div class="user-img" style="background-image: url(images/barbi.jpeg)"></div>
+                    <div class="pl-3">
+                      <p class="name">Bárbara Ibañez</p>
+                      <span class="position">Cliente</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="testimony-wrap py-4">
+                <div class="text">
+                  <p class="mb-4">“El proceso fue sencillo y el equipo siempre estuvo disponible para ayudarme.
+                    ¡Excelente servicio!”</p>
+                  <div class="d-flex align-items-center">
+                    <div class="user-img" style="background-image: url(images/francisco.jpg)"></div>
+                    <div class="pl-3">
+                      <p class="name">Francisco Gómez</p>
+                      <span class="position">Cliente</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="testimony-wrap py-4">
+                <div class="text">
+                  <p class="mb-4">“Encontré un local para mi emprendimiento en menos de una semana. ¡Gracias Alquiler
+                    Express!”</p>
+                  <div class="d-flex align-items-center">
+                    <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+                    <div class="pl-3">
+                      <p class="name">Carlos Pérez</p>
+                      <span class="position">Cliente</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer id="footer" class="footer bg-dark text-light">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Alquiler Express</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Sucursal AMBA</p>
+            <p>Buenos Aires, Argentina</p>
+            <p class="mt-3"><strong>Teléfono:</strong> <span>+54 11 5555-5555</span></p>
+            <p><strong>Email:</strong> <span>info@alquilerexpress.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://whatsapp.com" target="_blank"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Enlaces Útiles</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="about.html">Sobre nosotros</a></li>
+            <li><a href="services.html">Servicios</a></li>
+            <li><a href="#">Términos de servicio</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Nuestros Servicios</h4>
+          <ul>
+            <li><a href="#">Alquiler de Viviendas</a></li>
+            <li><a href="#">Alquiler de Locales</a></li>
+            <li><a href="#">Gestión de Propiedades</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+  <script src="/scripts/navbarSignIn.js"></script>
+</body>
+
+</html>

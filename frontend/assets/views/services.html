@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Servicios - Alquiler Express</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/ionicons.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/jquery.timepicker.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/icomoon.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Alquiler Express</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">Sobre nosotros</a></li>
+          <li class="nav-item active"><a href="services.html" class="nav-link">Servicios</a></li>
+          <li class="nav-item" id="mensajeIngreso"></li>
+          <li class="nav-item dropdown" id="userDropdown" style="display:none;">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdownMenu" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="bi bi-person-circle"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdownMenu">
+              <li><a class="dropdown-item" href="#" id="goToDashboard">Ir al Dashboard</a></li>
+              <li><a class="dropdown-item" href="#" id="goToRentals">Propiedades y Reservas</a></li>
+              <li><a class="dropdown-item" href="#" id="editProperty">Editar Propiedades</a></li>
+              <li><a class="dropdown-item" href="#" id="logoutBtn">Cerrar Sesión</a></li>
+            </ul>
+          </li>
+          <li id="logInButton" class="nav-item" style="display:block;"><a href="logIn.html" class="nav-link">Iniciar
+              sesión</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('images/bg_1.jpg');"
+    data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+        <div class="col-md-9 ftco-animate pb-5 text-center">
+          <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Inicio <i
+                  class="ion-ios-arrow-forward"></i></a></span> <span>Servicios <i
+                class="ion-ios-arrow-forward"></i></span></p>
+          <h1 class="mb-3 bread">Servicios</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section bg-gray">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-12 heading-section text-center ftco-animate mb-5">
+          <span class="subheading">Nuestros Servicios</span>
+          <h2 class="mb-2">La forma más fácil de alquilar</h2>
+        </div>
+      </div>
+      <div class="row d-flex">
+        <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services d-block text-center">
+            <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-home"></span></div>
+            <div class="media-body py-md-4">
+              <h3>Alquiler de Viviendas</h3>
+              <p>Encuentra la vivienda perfecta para tu familia con disponibilidad flexible y precios dinámicos.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services d-block text-center">
+            <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-shop"></span></div>
+            <div class="media-body py-md-4">
+              <h3>Alquiler de Locales</h3>
+              <p>Espacios comerciales adaptados a tus necesidades con ubicaciones estratégicas.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services d-block text-center">
+            <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-map"></span></div>
+            <div class="media-body py-md-4">
+              <h3>Mapas Interactivos</h3>
+              <p>Visualiza la ubicación exacta de las propiedades con fotos y precios en tiempo real.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services d-block text-center">
+            <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-star"></span></div>
+            <div class="media-body py-md-4">
+              <h3>Reseñas y Calificaciones</h3>
+              <p>Lee opiniones de otros clientes y deja tu propia calificación de 1 a 5.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section ftco-degree-bg services-section img mx-md-5"
+    style="background-image: url(images/bg_2.jpg);">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row justify-content-start mb-5">
+        <div class="col-md-6 text-center heading-section heading-section-white ftco-animate">
+          <span class="subheading">Flujo de Trabajo</span>
+          <h2 class="mb-3">¿Cómo funciona?</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
+              <div class="media block-6 services services-2">
+                <div class="media-body py-md-4 text-center">
+                  <div class="icon mb-3 d-flex align-items-center justify-content-center"><span>01</span></div>
+                  <h3>Busca tu Propiedad</h3>
+                  <p>Explora propiedades por localidad y fechas disponibles desde nuestra plataforma.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
+              <div class="media block-6 services services-2">
+                <div class="media-body py-md-4 text-center">
+                  <div class="icon mb-3 d-flex align-items-center justify-content-center"><span>02</span></div>
+                  <h3>Reserva Fácil</h3>
+                  <p>Realiza el pago total y reserva inmediatamente, ya sea presencial o en línea.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
+              <div class="media block-6 services services-2">
+                <div class="media-body py-md-4 text-center">
+                  <div class="icon mb-3 d-flex align-items-center justify-content-center"><span>03</span></div>
+                  <h3>Recoge tu Llave</h3>
+                  <p>Visita la sucursal más cercana para retirar la llave en el horario acordado.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
+              <div class="media block-6 services services-2">
+                <div class="media-body py-md-4 text-center">
+                  <div class="icon mb-3 d-flex align-items-center justify-content-center"><span>04</span></div>
+                  <h3>Devuelve y Evalúa</h3>
+                  <p>Regresa la llave y comparte tu experiencia con una reseña.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section bg-gray">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <p style="text-align: center">En Alquiler Express, nos esforzamos por ofrecer un servicio eficiente y
+            transparente. Desde la búsqueda
+            inicial hasta la devolución de la propiedad, nuestro equipo se asegura de que cada paso sea sencillo. Con
+            sucursales en el AMBA y planes de expansión, estamos comprometidos a crecer contigo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" class="footer bg-dark text-light">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Alquiler Express</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Sucursal AMBA</p>
+            <p>Buenos Aires, Argentina</p>
+            <p class="mt-3"><strong>Teléfono:</strong> <span>+54 11 5555-5555</span></p>
+            <p><strong>Email:</strong> <span>info@alquilerexpress.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://whatsapp.com" target="_blank"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Enlaces Útiles</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="about.html">Sobre nosotros</a></li>
+            <li><a href="services.html">Servicios</a></li>
+            <li><a href="#">Términos de servicio</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Nuestros Servicios</h4>
+          <ul>
+            <li><a href="#">Alquiler de Viviendas</a></li>
+            <li><a href="#">Alquiler de Locales</a></li>
+            <li><a href="#">Gestión de Propiedades</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#F96D00" />
+    </svg></div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+  <script src="/scripts/navbarSignIn.js"></script>
+</body>
+
+</html>
