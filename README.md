@@ -15,7 +15,7 @@ Esta solución reemplaza procesos manuales, favorece la escalabilidad del sistem
 ## 📚 **Documentación**
 
 Podés acceder a la documentación del proyecto desde el siguiente enlace:  
-[🔗 Ver documentación]()
+[🔗 Ver documentación](https://github.com/MatiasGuaymas/5to-Semestre/tree/main/INGE2/Practica/Documentacion)
 
 ## 👨‍💻 **Tecnologías Utilizadas**
 
